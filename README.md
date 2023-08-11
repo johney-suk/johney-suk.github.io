@@ -11,8 +11,7 @@
 Minimal Mistakes is a flexible two-column Jekyll theme, perfect for building personal sites, blogs, and portfolios. As the name implies, styling is purposely minimalistic to be enhanced and customized by you :smile:.
 
 :sparkles: See what's new in the [CHANGELOG](CHANGELOG.md).
-**If you enjoy this theme, please consider sponsoring:**
-**If you enjoy this theme, please consider sponsoring:**
+
 
 **If you enjoy this theme, please consider sponsoring:**
 
