@@ -1,0 +1,89 @@
+---
+---
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <style> 
+      ::-webkit-scrollbar{width: 12px; height: 5.5px;}
+      ::-webkit-scrollbar-track {background-color:#bcbcbc; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#9f9f9f; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: #8c8c8c;}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      { 
+          width:12px;height:12px;background:transparent;}
+    </style>
+    
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    <!-- 상단 진행바 시작 -->
+    <style>
+      .progress-bar {
+        background: linear-gradient(to right, #becc80 var(--scroll), transparent 0);
+        background-repeat: no-repeat;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        z-index: 9000;
+      }
+    </style>
+
+    <!-- This is the bar which shows scroll percentage -->
+    <div class="progress-bar"></div>
+
+
+    <!-- Script used to generate --scroll variable with current scroll percentage value -->
+    <script>
+      var element = document.documentElement,
+        body = document.body,
+        scrollTop = 'scrollTop',
+        scrollHeight = 'scrollHeight',
+        progress = document.querySelector('.progress-bar'),
+        scroll;
+
+      document.addEventListener('scroll', function () {
+        scroll = (element[scrollTop] || body[scrollTop]) / ((element[scrollHeight] || body[scrollHeight]) - element.clientHeight) * 100;
+        progress.style.setProperty('--scroll', scroll + '%');
+      });
+    </script>
+    <!-- 하단 진행바 끝 -->
+
+    {% include_cached skip-links.html %}
+    {% include_cached masthead.html %}
+
+    <div class="initial-content">
+      {{ content }}
+    </div>
+
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
+
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
+    </aside>
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>
