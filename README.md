@@ -1,24 +1,12 @@
-
-
-
 Minimal Mistakes is a flexible two-column Jekyll theme, perfect for building personal sites, blogs, and portfolios. As the name implies, styling is purposely minimalistic to be enhanced and customized by you :smile:.
-
-:sparkles: See what's new in the [CHANGELOG](CHANGELOG.md).
-
-
-**If you enjoy this theme, please consider sponsoring:**
-
-[!["Buy Me A Coffee"](https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png)](https://www.buymeacoffee.com/mmistakes)
- [![Support via PayPal](https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg)](https://www.paypal.me/mmistakes)
 
 **Note:** The theme uses the [jekyll-include-cache](https://github.com/benbalter/jekyll-include-cache) plugin which will need to be installed in your `Gemfile` and must be retained in the `plugins` array of `_config.yml`. Otherwise you'll encounter `Unknown tag 'include_cached'` errors at build.
 
 [![Minimal Mistakes live preview][2]][1]
 [![Minimal Mistakes live preview][2]][1]
 [1]: https://mmistakes.github.io/minimal-mistakes/
-[2]: screenshot.png (live preview)
-
 ![layout examples](screenshot-layouts.png)
+
 
 ## Notable features
 
@@ -31,9 +19,6 @@ Minimal Mistakes is a flexible two-column Jekyll theme, perfect for building per
 - Optional [header images](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#headers), [custom sidebars](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#sidebars), [table of contents](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#table-of-contents), [galleries](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#gallery), related posts, [breadcrumb links](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#breadcrumb-navigation-beta), [navigation lists](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#navigation-list), and more.
 - Commenting support (powered by [Disqus](https://disqus.com/), [Facebook](https://developers.facebook.com/docs/plugins/comments), Google+, [Discourse](https://www.discourse.org/), static-based via [Staticman](https://staticman.net/), [utterances](https://utteranc.es/), and [giscus](https://giscus.app/)).
 - [Google Analytics](https://www.google.com/analytics/) support.
-- UI localized text in English (default), Arabic (عربي), Brazilian Portuguese (Português brasileiro), Catalan, Chinese, Danish, Dutch, Finnish, French (Français), German (Deutsch), Greek, Hebrew, Hindi (हिंदी), Hungarian, Indonesian, Irish (Gaeilge), Italian (Italiano), Japanese, Kiswahili, Korean, Malayalam, Myanmar (Burmese), Nepali (Nepalese), Norwegian (Norsk), Persian (فارسی), Polish, Punjabi (ਪੰਜਾਬੀ), Romanian, Russian, Slovak, Spanish (Español), Swedish, Thai, Turkish (Türkçe), and Vietnamese.
-
-## Skins (color variations)
 
 This theme comes in nine different skins (in addition to the default one).
 
@@ -72,9 +57,6 @@ Additional sample posts are available under [posts archive][year-archive] on the
 [tags-archive]: https://mmistakes.github.io/minimal-mistakes/tags/
 [year-archive]: https://mmistakes.github.io/minimal-mistakes/year-archive/
 
-## Installation
-
-There are three ways to install: as a [gem-based theme](https://jekyllrb.com/docs/themes/#understanding-gem-based-themes), as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) (GitHub Pages compatible), or forking/directly copying all of the theme files into your project.
 
 ### Gem-based method
 
@@ -174,22 +156,6 @@ To test the theme, run `bundle exec rake preview` and open your browser at `http
 - [The Noun Project](https://thenounproject.com) -- Garrett Knoll, Arthur Shlain, and [tracy tam](https://thenounproject.com/tracytam)
 - [Font Awesome](http://fontawesome.io/)
 - [Unsplash](https://unsplash.com/)
-
-### Other:
-
-- [Jekyll](http://jekyllrb.com/)
-- [jQuery](http://jquery.com/)
-- [Susy](http://susy.oddbird.net/)
-- [Breakpoint](http://breakpoint-sass.com/)
-- [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/)
-- [FitVids.JS](http://fitvidsjs.com/)
-- [GreedyNav.js](https://github.com/lukejacksonn/GreedyNav)
-- [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-- [Gumshoe](https://github.com/cferdinandi/gumshoe)
-- [jQuery throttle / debounce](http://benalman.com/projects/jquery-throttle-debounce-plugin/)
-- [Lunr](http://lunrjs.com)
-
----
 
 ## License
 
