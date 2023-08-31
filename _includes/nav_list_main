@@ -133,7 +133,7 @@
         <span class="nav__sub-title">DataBase</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "database" %}
+                    {% if category[0] == "DataBase" %}
                         <li><a href="/categories/database" class="">DataBase<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
