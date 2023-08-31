@@ -134,7 +134,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "InfoProcessing" %}
-                        <li><a href="/categories/infoprocessing" class="">정보처리기사<span class="nav_size">{{category[1].size}}</span></a></li>
+                        <li><a href="/categories/database" class="">DataBase<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
