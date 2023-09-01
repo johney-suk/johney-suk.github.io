@@ -109,7 +109,7 @@ analytics:
 # Site Author
 author:
   name: "JOHNEY"
-  avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar: "https://cdn.jsdelivr.net/gh/johney-suk/johney-suk.github.io/avatar.png" "# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "**공부하고 기록하는** 블로그"
   location: "Republic of Korea"
   email: "sukhyunil19@gmail.com"
