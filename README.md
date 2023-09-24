@@ -3,6 +3,7 @@ Minimal Mistakes is a flexible two-column Jekyll theme, perfect for building per
 **Note:** The theme uses the [jekyll-include-cache](https://github.com/benbalter/jekyll-include-cache) plugin which will need to be installed in your `Gemfile` and must be retained in the `plugins` array of `_config.yml`. Otherwise you'll 
 encounter `Unknown tag 'include_cached'` errors at build.
 
+
 - Bundled as a "theme gem" for easier installation/upgrading.
 - Compatible with GitHub Pages.
 - Support for Jekyll's built-in Sass/SCSS preprocessor.
