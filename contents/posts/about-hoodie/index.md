@@ -1,5 +1,5 @@
 ---
-title: "🎇 1. About gatsby-starter-hoodie"
+title: "🎇 1. About gatsby-starter-hoodie-test"
 description: "Let's learn about gatsby-starter-hoodie."
 date: 2021-05-01
 update: 2021-05-01
