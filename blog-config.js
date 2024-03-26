@@ -1,6 +1,6 @@
 module.exports = {
-  title: "hoodie",
-  description: "Hello :) I'm Hudi who developed gatsby-starter-hoodie theme.",
+  title: "joni.blog",
+  description: "기록을 위해 만든 공간입니다.",
   author: "Hudi",
   siteUrl: "https://devhudi.github.io/gatsby-starter-hoodie/",
   links: {
@@ -17,7 +17,7 @@ module.exports = {
     link: "https://hudi.blog",
   },
   utterances: {
-    repo: "devHudi/gatsby-starter-hoodie",
+    repo: "johney-suk/joni.blog",
     type: "pathname",
   },
 }
