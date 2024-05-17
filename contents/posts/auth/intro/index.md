@@ -20,6 +20,8 @@ series: "인증서버 개념과 동작 원리"
 - 인증 성공 시 인증 서버로 부터 발급 받은 Access Token을 API 서버 연동 호출 시에 HTTP 헤더에 포함시킨다.
 - API 서버는 외부 API 서버로 전달 받은 토큰 정보를 이용하여 토큰의 적합성 검사를 진행 한 후 토큰이 정상일 경우 API를 호출하여 그 Response를 외부 API 서버에 반환 한다.
 
+![외부서버 연동 인증 프로세스](./1.PNG)
+
 ## 인증서버 구축의 주요 목표
 
 - 보안 강화
@@ -30,4 +32,4 @@ series: "인증서버 개념과 동작 원리"
 
 ## 다음
 
-<!-- [OAuth 2.0과 OpenID Connect에 대하여](/quick-start-kr) OAuth 2.0과 OpenID Connect의 개념정리 -->
+[OAuth 2.0에 대하여](../oauth-2.0/index.md) OAuth 2.0과 OpenID Connect의 개념정리
