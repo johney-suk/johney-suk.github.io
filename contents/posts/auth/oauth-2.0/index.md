@@ -68,7 +68,7 @@ Client(사용자가 이용하려는 서비스)에서 서비스를 이용하려�
 
 Client 서버는 OAuth 프로세스를 시작하기 위해 사용자의 브라우저를 Authorization Server로 보내야한다.
 
-Client 서버는 이때 Authorization Server가 제공하는 Authorization URL에 `response_type` , `client_id` , `redirect_uri` , `scope` 등의 매개변수를 쿼리 스트링으로 포함하여 보낸다.
+Client 서버는 이때 Authorization Server가 제공하는 Authorization URL에 `response_type` , `client_id` , `redirect_uri` , `scope` 등의 매개변수를 포함하여 보낸다.
 
 ```
 https://accounts.google.com/o/oauth2/auth?
@@ -77,7 +77,46 @@ https://accounts.google.com/o/oauth2/auth?
 &redirect_uri=https://yourapp.com/callback
 &scope=email,profile
 ```
+3. Authorization URL로 이동된 사용자는 제공된 로그인 페이지 에서
+4. ID/PW 입력하여 인증 시도 
+5. Authorization Code 발급하고,
+6. Redirect URI로 Redirect
+```
+https://yourapp.com/callback?code=AUTHORIZATION_CODE
+```
 
+인증이 성공되었다면, Authorization Server는 제공된 Redirect URI로 사용자를 리다이렉션시킬 것 이다. 이때, Redirect URI에 Authorization Code를 포함하여 사용자를 리디렉션 시킨다.
+
+이때, Authorization Code란 Client가 Access Token을 획득하기 위해 사용하는 임시 코드이며 Authorization Code Grant 타입 인증방식의 주요 포인트다.
+
+7. Client 서버는 Authorization Server에 Authorization Code를 전달하고, Access Token을 응답받는다. Client는 발급받은 사용자가 쿠키나 세션에 Access Token을 저장하고, 이후 Resource Server에서 사용자가 리소스서버에 접근하기 위해 Access Token을 같이 전달하게 된다.
+
+당연히 Access Token은 유출되어서는 안되고 제 3자가 가로채지 못하도록 HTTPS 연결을 통해서만 사용될 수 있다. 아래는 ASP.NET Core 애플리케이션에서 OpenID Connect와 OAuth 2.0 인증 및 인가를 구현하기 위한 라이브러리 프레임워크 Openiddict를 프로젝트에 적용했는데 HTTP로 통신했을때 나왔던 에러다.
+```
+{
+  "error": "invalid_request",
+  "error_description": "This server only accepts HTTPS requests.",
+  "error_uri": "https://documentation.openiddict.com/errors/ID2083"
+}
+```
+
+Authorization Code와 Access Token 교환은 `token` 엔드포인트에서 이루어진다. 아래는 token 엔드포인트에서 Access Token을 발급받기 위한 HTTP 요청의 예시이다. 이 요청은 `application/x-www-form-urlencoded` 의 형식에 맞춰 전달해야한다.
+
+![3 ~ 7. 로그인 요청](./6.PNG)
+
+
+
+
+```
+POST https://oauth2.googleapis.com/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=YOUR_CLIENT_ID&
+client_secret=YOUR_CLIENT_SECRET&
+code=AUTHORIZATION_CODE&
+redirect_uri=YOUR_REDIRECT_URI&
+grant_type=authorization_code
+```
 
 
 
