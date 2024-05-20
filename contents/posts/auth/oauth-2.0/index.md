@@ -48,7 +48,7 @@ OAuth2는 기본적으로 아래의 흐름을 갖고 있다.
 
 ##  OAuth 2.0 인증 과정
 
-아래 이미지는 주로 소셜 로그인에 사용되고 있는 **Authorization Code Grant (권한 부여 코드 유형)**을 적용시킨 OAuth 2.0 인증 과정 프로세스 예시입니다.
+아래 이미지는 주로 소셜 로그인에 사용되고 있는 `Authorization Code Grant (권한 부여 코드 유형)`을 적용시킨 `OAuth 2.0 인증 과정 프로세스 예시`입니다.
 
 ![OAuth 2.0 Authorization Code Grant](./3.PNG)
 
@@ -60,8 +60,8 @@ OAuth2는 기본적으로 아래의 흐름을 갖고 있다.
 Client(사용자가 이용하려는 서비스)에서 서비스를 이용하려는 사용자를 대신하여 Authorization Server와 Resource Server에 요청을 보내 필요한 정보를 서로 비교해 유효성을 판단한다.
 
 ##  인증 과정 자세히 
-1. 사용자는 서비스를 이용하기 위해 로그인 화면에 접근 한다.
-2. 그럼 서비스는 사용자에게 로그인 페이지를 제공하게된다. 로그인 페이지에서 사용자는 "소셜 로그인"을 시도한다.
+### 1. 사용자는 서비스를 이용하기 위해 로그인 화면에 접근 한다.
+### 2. 그럼 서비스는 사용자에게 로그인 페이지를 제공하게된다. 로그인 페이지에서 사용자는 "소셜 로그인"을 시도한다.
 
 ![소셜 로그인](./4.PNG)
 ![1 ~ 2. 로그인 요청](./5.PNG)
@@ -77,10 +77,10 @@ https://accounts.google.com/o/oauth2/auth?
 &redirect_uri=https://yourapp.com/callback
 &scope=email,profile
 ```
-3. Authorization URL로 이동된 사용자는 제공된 로그인 페이지 에서
-4. ID/PW 입력하여 인증 시도 
-5. Authorization Code 발급하고,
-6. Redirect URI로 Redirect
+### 3. Authorization URL로 이동된 사용자는 제공된 로그인 페이지에
+### 4. ID/PW 입력하여 인증 시도 
+### 5. Authorization Code 발급하고,
+### 6. Redirect URI로 Redirect
 ```
 https://yourapp.com/callback?code=AUTHORIZATION_CODE
 ```
@@ -89,9 +89,11 @@ https://yourapp.com/callback?code=AUTHORIZATION_CODE
 
 이때, Authorization Code란 Client가 Access Token을 획득하기 위해 사용하는 임시 코드이며 Authorization Code Grant 타입 인증방식의 주요 포인트다.
 
-7. Client 서버는 Authorization Server에 Authorization Code를 전달하고, Access Token을 응답받는다. Client는 발급받은 사용자가 쿠키나 세션에 Access Token을 저장하고, 이후 Resource Server에서 사용자가 리소스서버에 접근하기 위해 Access Token을 같이 전달하게 된다.
+### 7. Client 서버는 Authorization Server에 Authorization Code를 전달하고, Access Token을 응답 
 
-당연히 Access Token은 유출되어서는 안되고 제 3자가 가로채지 못하도록 HTTPS 연결을 통해서만 사용될 수 있다. 아래는 ASP.NET Core 애플리케이션에서 OpenID Connect와 OAuth 2.0 인증 및 인가를 구현하기 위한 라이브러리 프레임워크 Openiddict를 프로젝트에 적용했는데 HTTP로 통신했을때 나왔던 에러다.
+Client는 발급받은 사용자가 쿠키나 세션에 Access Token을 저장하고, 이후 Resource Server에서 사용자가 리소스서버에 접근하기 위해 Access Token을 같이 전달하게 된다.
+
+당연히 `Access Token`은 유출되어서는 안되고 제 3자가 가로채지 못하도록 HTTPS 연결을 통해서만 사용될 수 있다. 아래는 ASP.NET Core 애플리케이션에서 OpenID Connect와 OAuth 2.0 인증 및 인가를 구현하기 위한 라이브러리 프레임워크 `Openiddict`로 적용한 프로젝트에 `HTTP`로 통신했을때 나왔던 에러다.
 ```
 {
   "error": "invalid_request",
@@ -100,12 +102,10 @@ https://yourapp.com/callback?code=AUTHORIZATION_CODE
 }
 ```
 
-Authorization Code와 Access Token 교환은 `token` 엔드포인트에서 이루어진다. 아래는 token 엔드포인트에서 Access Token을 발급받기 위한 HTTP 요청의 예시이다. 이 요청은 `application/x-www-form-urlencoded` 의 형식에 맞춰 전달해야한다.
+토큰 발급 성공 예시
+![토큰](./8.PNG)
 
-![3 ~ 7. 로그인 요청](./6.PNG)
-
-
-
+Authorization Code와 Access Token 교환은 `token` 엔드포인트에서 이루어진다. 아래는 token 엔드포인트에서 Access Token을 발급받기 위한 HTTP 요청의 예시이다. 이 요청은 `application/x-www-form-urlencoded` 의 형식에 맞춰 필수 매개변수를 전달해야한다.
 
 ```
 POST https://oauth2.googleapis.com/token
@@ -118,6 +118,26 @@ redirect_uri=YOUR_REDIRECT_URI&
 grant_type=authorization_code
 ```
 
+- `grant_type` : Authorization Code Grant에 맞는 `authorization_code` 로 설정 
+- `code` : 발급받은 Authorization Code
+- `redirect_uri` : Redirect URI
+- `client_id` : Client ID
+- `client_secret` : Client ID에 해당하는 Client Secret이 발급된 경우 포함하여 요청해야한다.
+
+![3 ~ 7. 로그인 요청](./6.PNG)
+
+
+### 8 ~ 9. 인증 완료 및 로그인 성공
+
+위 과정을 성공적으로 마치면 Client 서버는 사용자에게 로그인이 성공하였음을 알린다.
+
+
+
+### 10 ~ 13. Access Token으로 리소스 접근
+
+이후 사용자가 Resource Server의 리소스가 필요한 기능을 Client 서버에 요청한다. Client 서버는 위 과정에서 발급받고 저장해둔 사용자의 Access Token을 사용하여 리소스 서버에 토큰을 검증하고, 사용자가 Clien 서버에 요청한 정보를 제공한다.
+
+![10 ~ 13 로그인 요청](./7.PNG)
 
 
 
@@ -125,12 +145,9 @@ grant_type=authorization_code
 아래 이미지는 **Client Credentials Grant Type**을 적용시킨 OAuth 2.0 인증과정 프로세스 예시입니다.
 
 
-
 ![OAuth 2.0 Client Credentials Grant Type](./2.PNG)
 
 프로젝트에선 Authorization Code Grant 형식을 적용하진 않았지만 인증서버 구축 전 일반적 사용되는 소셜 로그인을 분석하고 공부한 내용을 정리하겠습니다.
-
-
 
 
 ## 다음
