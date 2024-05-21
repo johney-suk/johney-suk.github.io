@@ -148,8 +148,3 @@ grant_type=authorization_code
 ![OAuth 2.0 Client Credentials Grant Type](./2.PNG)
 
 프로젝트에선 Authorization Code Grant 형식을 적용하진 않았지만 인증서버 구축 전 일반적 사용되는 소셜 로그인을 분석하고 공부한 내용을 정리하겠습니다.
-
-
-## 다음
-
-<!-- [OAuth 2.0과 OpenID Connect에 대하여](/quick-start-kr) OAuth 2.0과 OpenID Connect의 개념정리 -->
