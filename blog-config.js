@@ -2,7 +2,7 @@ module.exports = {
   title: "joni.blog",
   description: "공부한 내용을 정리합니다",
   author: "Joni",
-  siteUrl: "https://devhudi.github.io/gatsby-starter-hoodie/",
+  siteUrl: "https://johney-suk.github.io/",
   links: {
     github: "https://github.com/johney-suk/",
     // linkedIn: "https://linkedin.com",
