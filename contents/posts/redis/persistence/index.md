@@ -35,7 +35,7 @@ BGSAVE와 SAVE 의 차이점은 어떤 프로세스가 파일 쓰기 작업을 �
 SAVE는 main process가 직접 파일 쓰기 작업을 처리하므로 작업이 끝날 때까지 클라이언트의 명령을 처리할 수 없고,
 
 BGSAVE는 child process가 생성되어 background로 실행되므로 쓰기 작업 중에도 클라이언트의 명령을 정상적으로 처리할 수 있다.
-
+ 
 #### BGSAVE 동작 순서
 
 + Child process를 fork() 한다.
