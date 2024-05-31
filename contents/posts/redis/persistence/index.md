@@ -42,7 +42,7 @@ BGSAVE는 child process가 생성되어 background로 실행되므로 쓰기 작
 + Child process는 데이터를 새 RDB temp 파일에 쓴다.
 + 쓰기가 끝나면 기존 파일을 지우고, 이름을 변경한다.
 
-#### SAVE 동작순서
+#### SAVE 동작순서 
 + Main process가 데이터를 새 RDB temp 파일에 쓴다.
 + 쓰기가 끝나면 기존 파일을 지우고, 새 파일로 교체한다.
 
