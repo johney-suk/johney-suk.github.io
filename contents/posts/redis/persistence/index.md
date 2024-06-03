@@ -37,7 +37,7 @@ SAVE는 main process가 직접 파일 쓰기 작업을 처리하므로 작업이
 BGSAVE는 child process가 생성되어 background로 실행되므로 쓰기 작업 중에도 클라이언트의 명령을 정상적으로 처리할 수 있다.
  
 #### BGSAVE 동작 순서
-
+ 
 + Child process를 fork() 한다.
 + Child process는 데이터를 새 RDB temp 파일에 쓴다.
 + 쓰기가 끝나면 기존 파일을 지우고, 이름을 변경한다.
