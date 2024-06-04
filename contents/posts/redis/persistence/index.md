@@ -49,7 +49,7 @@ BGSAVE는 child process가 생성되어 background로 실행되므로 쓰기 작
 > BGSAVE 방식은 fork를 하기 때문에 메모리를 거의 두배 가량 사용하므로 이에 주의 해야 한다.
 
 
-
+ 
 #### [stop-writes-on-bgsave-error]
 ```
 stop-writes-on-bgsave-error yes
