@@ -1,21 +1,25 @@
 ---
-title: "[정리] Redis 실무에 사용하면서 공부한 내용"
-description: "Redis 기본 개념 정리"
+title: "[Spring] JMeter 사용법"
+description: "JMeter란?, 테스트 방법"
 date: 2024-06-12
 update: 2024-06-12
 tags:
-  - DataBase
-  - Redis
-series: "Redis 개념과 동작 원리"
+  - Spring
+  - JMeter
+series: "JMeter 사용법"
 ---
 
 ## 서론
-작년 실무에서 진행된 메신저 개발에서 프로젝트의 모바일 연동 및 `온프레미스(On-premise)`로 구축 업무를 인수인계를 받으며 세션 관리, 실시간 메시지 전달, 채팅 히스토리 저장, 온라인 상태 관리, 분산 캐시 등 다양한 용도로 Redis 활용하였고, 프로젝트 진행 과정에서 정리한 Redis 개념과 동작 원리를 포스팅하겠습니다.
+웹 애플리케이션 성능 테스트 툴은 웹 애플리케이션을 운영하기전 성능, 안정성 및 확장성을 평가하는 데 필수이며, 잘알려진 테스트 툴은 Java 오픈소스 `Apache JMeter`,  Node.js 오픈소스 `Artillery`, 네이버에서 Grinder를 이용해서 대규모 엔터프라이즈 환경용으로 만든 `nGrinder`, `Gatling`가 있습니다.
 
-## Redis란?
+이 외에도 JavaScript 오픈소스 Grafana 통합을 통한 시각화를 제공하는 `k6`,  Python 오픈소스 `Locust` 등 각각의 특징과 장점을 가지고 있어, 사용 목적과 환경에 따라 선택하여 사용되고 있습니다. 
 
-Redis(Remote Dictionary Storage,레디스)는 모든 데이터를 메모리에 저장하고 조회하는 in-memory DB, 모든 데이터를 메모리로 불러와서 처리하는 메모리 기반의 key-value 구조의 데이터 관리 시스템(DBMS)이다. 일종의 NoSQL이다.
->이런 기술을 위해 Redis 가 존재하고 누군가는 Redis 를 캐싱 솔루션이라고 부르기도 하고 누군가는 NoSQL 의 `Key-Value 저장소`라고 부르기도 한다.
+> 최근 운영을 앞두고 있는 프로젝트의 웹 어플리케이션 성능 테스트를 진행하면서 웹 애플리케이션 성능 테스트 툴로 Java 오픈소스 `Apache JMeter`를 선택하였고 선택하게된 이유와 분석 내용을 포스팅 하겠습니다.
+
+## JMeter란?
+![JMeter란?](./1.PNG)
+
+Apache JMeter는 웹 애플리케이션 및 다양한 프로토콜에 대해 부하 테스트와 성능 측정을 수행할 수 있는 오픈 소스 도구입니다. GUI 기반의 사용이 편리한 인터페이스를 제공하며, HTTP, HTTPS, FTP, JDBC, JMS, SOAP, REST 등 다양한 프로토콜을 지원합니다. JMeter는 분산 테스트, 스크립트 기반 자동화, 확장 가능한 플러그인, 그리고 다양한 리포팅 및 분석 기능을 제공하여 웹 애플리케이션의 성능을 종합적으로 테스트할 수 있습니다.
 
 ## Key-Value 저장소 이해
 key-value 구조 데이터란, mysql 같은 관계형 데이터가 아닌 비 관계형 구조로서 데이터를 그저 '키-값' 형태로 단순하게 저장하는 구조를 말한다.
