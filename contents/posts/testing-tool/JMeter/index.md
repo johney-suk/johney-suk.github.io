@@ -57,7 +57,7 @@ File -> New -> Test Plan Name 설정
 
 ![JMeter 테스트 2. Thread Group](./5.PNG)
 
-
+ 
 ![JMeter 테스트 2. Thread Group - ](./6.PNG)
 
 #### Action to be taken after a Sampler error
