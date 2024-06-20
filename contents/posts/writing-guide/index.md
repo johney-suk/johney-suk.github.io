@@ -9,7 +9,7 @@ tags:
 series: "Getting started your blog with gatsby-starter-hoodie"
 ---
 
-## 1. Add a post
+## 1. Add a post 
 
 You can add posts by creating a new markdown document in the `contents/post` path.
 
