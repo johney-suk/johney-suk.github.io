@@ -5,7 +5,7 @@ date: 2021-05-03
 update: 2021-05-03
 tags:
   - hoodie
-  - writing-guide
+  - writing-guide 
 series: "Getting started your blog with gatsby-starter-hoodie"
 ---
 
