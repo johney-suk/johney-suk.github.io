@@ -1,10 +1,10 @@
 ---
-title: "[Spring] JMeter 사용법"
+title: "[부하테스트] 부하 테스트 시작하기"
 description: "부하 테스트"
 date: 2024-06-12
 update: 2024-06-12
 tags:
-  - Spring
+  - 부하테스트
   - JMeter
 series: "부하 테스트 feat.JMeter"
 ---

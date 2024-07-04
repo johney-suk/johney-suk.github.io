@@ -1,5 +1,5 @@
 ---
-title: "[Spring] JMeter 사용 후기"
+title: "[Spring] JMeter으로 부하테스트 하기"
 description: "JMeter 사용후기"
 date: 2024-07-04
 update: 2024-06-04
