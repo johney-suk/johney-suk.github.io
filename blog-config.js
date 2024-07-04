@@ -13,7 +13,7 @@ module.exports = {
     // medium: "https://medium.com",
     // blogger: "https://blogger.com",
     // email: "mailto:devhudi@gmail.com",
-    resume: "https://hudi.blog",
+  //  resume: "https://hudi.blog",
     // link: "https://hudi.blog",
   },
   utterances: {
