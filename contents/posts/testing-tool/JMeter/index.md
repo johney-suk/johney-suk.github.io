@@ -1,20 +1,13 @@
 ---
-title: "[Spring] JMeter 사용법"
-description: "JMeter란?, 테스트 방법"
-date: 2024-06-12
-update: 2024-06-12
+title: "[Spring] JMeter 사용 후기"
+description: "JMeter 사용후기"
+date: 2024-07-04
+update: 2024-06-04
 tags:
   - Spring
   - JMeter
-series: "JMeter 사용법"
+series: "부하 테스트 feat.JMeter"
 ---
-
-## 서론
-웹 애플리케이션 성능 테스트 툴은 웹 애플리케이션을 운영하기전 성능, 안정성 및 확장성을 평가하는 데 필수이며, 잘알려진 테스트 툴은 Java 오픈소스 `Apache JMeter`,  Node.js 오픈소스 `Artillery`, 네이버에서 Grinder를 이용해서 대규모 엔터프라이즈 환경용으로 만든 `nGrinder`, `Gatling`가 있습니다.
-
-이 외에도 JavaScript 오픈소스 Grafana 통합을 통한 시각화를 제공하는 `k6`,  Python 오픈소스 `Locust` 등 각각의 특징과 장점을 가지고 있어, 사용 목적과 환경에 따라 선택하여 사용되고 있습니다. 
-
-> 최근 운영을 앞두고 있는 프로젝트의 웹 어플리케이션 성능 테스트를 진행하면서 웹 애플리케이션 성능 테스트 툴로 Java 오픈소스 `Apache JMeter`를 선택하였고 선택하게된 이유와 분석 내용을 포스팅 하겠습니다.
 
 ## JMeter란?
 ![JMeter란?](./1.PNG)
@@ -155,3 +148,4 @@ Configuration -> Pre-Processor -> Timer -> Sampler -> Post-Processor -> Assertio
 
 - https://www.redline13.com/blog/2019/05/jmeter-thread-count/
 - https://12bme.tistory.com/503
+- https://jmeter.apache.org/usermanual
